@@ -1,0 +1,254 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+  background-image: url(../img/pattern.png);
+}
+
+.game-field {
+	position: relative;
+}
+
+/*   MENU   */
+
+.menu {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 1200px;
+	height: 650px;
+	background: rgba(0, 0, 0, 0.65);
+	top: 0;
+	left: 0;
+	font-family: "SF-Atarian-System-Italic";
+	font-size: 50px;
+	color: white;
+}
+.menu__label {
+	margin-bottom: 30px;
+}
+.menu__input {
+	box-sizing: border-box;
+	padding: 5px 10px;
+	height: 50px;
+	width: 250px;
+	border: none;
+	font: inherit;
+	font-size: 40px;
+	background-color: rgba(126, 133, 132, 0.88);
+	color: white;
+}
+.button {
+  display: block;
+	width: 250px;
+	font: inherit;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(124, 31, 22, 0.81);
+	color: white;
+}
+.button:hover {
+	background-color: rgb(180, 17, 17);
+	color: black;
+}
+.menu__characters-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	margin-bottom: 50px;
+	width: 250px;
+	justify-content: space-between;
+}
+.menu__characters-list li {
+	width: 110px;
+	height: 100px;
+	cursor: pointer;
+}
+.menu__characters-list li:nth-child(1) {
+	background-image: url("../img/character-1.png");
+}
+.menu__characters-list li:nth-child(2) {
+	background-image: url("../img/character-2.png");
+}
+.menu__characters-list li:hover {
+	background-color: rgba(0, 0, 0, 0.65);
+}
+.menu__characters-list .active {
+	background-color: rgba(0, 0, 0, 0.65);
+}
+.menu form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+/*    TASK     */
+
+
+@keyframes bounce {
+  0%    { transform: translateY(-2000px);}
+  70%   { transform: translateY(30px);}
+  90%   { transform: translateY(-10px);}
+  100%  { transform: translateY(0);}
+}
+@keyframes bounce-2 {
+  0%              { transform: translateY(-1000px);}
+  5%, 15%, 25%   { transform: translateY(10px);}
+  10%, 20%, 30%   { transform: translateY(-10px);}
+  100%            { transform: translateY(calc(50vh - 60px));}
+}
+
+
+.task-field {
+  position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  width: 720px;
+	height: 370px;
+  top: 50%;
+	margin-top: -185px;
+  left: 50%;
+	margin-left: -360px;
+  border-radius: 10px;
+  background-color: rgba(233, 233, 233, 0.95);
+	background-image: linear-gradient(133deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.14), 10px 10px 15px rgba(0, 0, 0, 0.54);
+	font-size: 25px;
+  animation-name: bounce;
+  animation-duration: 0.6s;
+}
+.task-field__task {
+	margin: 0;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+.task-field__label {
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.task-field form {
+  display: flex;
+  flex-direction: column;
+}
+.task-field__input {
+	box-sizing: border-box;
+	padding: 7px 10px;
+	border: none;
+	font-size: 20px;
+	border-radius: 5px;
+	margin-bottom: 40px;
+}
+.task-field__button {
+	padding: 10px;
+	font-size: 20px;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	background-color: #1abc9c;
+	cursor: pointer;
+}
+.task-field__button:hover {
+	background-color: #1bc6a4;
+}
+.task-field__button:active {
+  background-color: #1abc9c;
+}
+
+.task-field__notice {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  margin-left: -60px;
+  top: 50%;
+  margin-top: -60px;
+  background-image: url(../img/check-circle.svg);
+  animation-name: bounce-2;
+  animation-duration: 2s;
+}
+.task-field__notice.wrong {
+  background-image: url(../img/times-circle.svg);
+}
+
+
+
+
+
+/*    RECORDS TABLE     */
+
+.results {
+	position: absolute;
+	width: 1200px;
+	height: 650px;
+	background: rgba(0, 0, 0, 0.65);
+	top: 0;
+	left: 0;
+	font-family: "SF-Atarian-System-Italic";
+	font-size: 28px;
+	color: white;
+}
+.results__heading {
+  margin: 0;
+	margin-top: 30px;
+	font-size: 45px;
+	text-align: center;
+	line-height: 65px;
+}
+.records__recordsList {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 15px;
+	text-align: center;
+	list-style-position: inside;
+}
+.records__recordsList li {
+  line-height: 35px;
+}
+.results__button {
+  margin: 0 auto;
+  padding: 5px 0;
+  font-size: 35px;
+}
+
+
+.task-field__play-button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border: none;
+  background: transparent url("../img/play-circle.svg") no-repeat center;
+  cursor: pointer;
+}
+
+/*  SORT TASK   */
+
+.task-field__sortable-word {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-bottom: 30px;
+	display: flex;
+}
+.task-field__sortable-word li {
+	width: 50px;
+	height: 60px;
+	margin-right: 10px;
+	text-align: center;
+	font-size: 36px;
+	line-height: 50px;
+	border-radius: 7px;
+	background: white;
+	cursor: pointer;
+}
