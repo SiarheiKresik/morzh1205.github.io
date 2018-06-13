@@ -4,6 +4,7 @@ export default class Sound {
 	constructor(file, loop, vol = 1) {
 		this.audio = document.createElement("audio");
 		this.audio.src = file;
+		this.audio.preload = "auto";
 		if (loop == "loop") {
 			this.audio.loop = "loop";
 		}
