@@ -53,7 +53,10 @@ function init() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     renderMenu();
     fillNameFromLocalStorage();
-    document.querySelector(".preloader").remove();
+    
+    if (document.querySelector(".preloader")) {
+      document.querySelector(".preloader").remove();
+    }
 
     document.querySelector("form").addEventListener("submit", function(evt) {
       evt.preventDefault();
