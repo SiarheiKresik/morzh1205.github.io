@@ -4,7 +4,6 @@ export default class Sound {
 	constructor(file, loop, vol = 1) {
 		this.audio = document.createElement("audio");
 		this.audio.src = file;
-		this.audio.preload = "auto";
 		if (loop == "loop") {
 			this.audio.loop = "loop";
 		}
@@ -13,8 +12,11 @@ export default class Sound {
 	}
 	play() {
 		this.audio.currentTime = 0;
-		this.audio.play();
-		this.state = 'play';
+		this.audio.oncanplaythrough = () => {
+			this.audio.play();
+			this.state = 'play';
+		};
+
 	}
 	pause() {
 		this.audio.pause();
