@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'SF-Atarian-System-Italic';
+    src: url('../fonts/SF Atarian System Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'creeper';
+    src: url('../fonts/creeper.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +21,6 @@ body {
 	height: 100vh;
   background-image: url(../img/pattern.png);
 }
-
 
 
 .game-field {
@@ -280,7 +293,6 @@ body {
 .preloader p {
   margin: auto;
   padding: 0;
-  font-family: ‘Arial Narrow’, sans-serif;
   font-weight: 100;
   font-size: 30px;
   color: #a3e1f0;
