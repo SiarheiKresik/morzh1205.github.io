@@ -1,10 +1,9 @@
 import checkResult from "./checkTasks.js";
 
+const _ = require('lodash');
 
 
-function getRandomFromArr(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
+
 
 
 const leftOperand = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -26,7 +25,7 @@ export default function task_1() {
 
   const label = document.createElement("label");
   label.classList.add("task-field__label");
-  label.textContent = `${getRandomFromArr(leftOperand)} ${getRandomFromArr(operation)} ${getRandomFromArr(rightOperand)}`;
+  label.textContent = `${_.sample(leftOperand)} ${_.sample(operation)} ${_.sample(rightOperand)}`;
   form.appendChild(label);
 
   const input = document.createElement("input");

@@ -17,6 +17,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "lodash": "^4.17.10",
     "npm": "^6.1.0",
     "sortablejs": "^1.7.0",
     "speech-synthesis": "^0.3.2"

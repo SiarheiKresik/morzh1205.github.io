@@ -1,6 +1,11 @@
 import checkResult from "./checkTasks.js";
 import vocabulary from "./vocabulary.js";
 
+const _ = require('lodash');
+
+
+
+
 
 export default function task_2() {
 
@@ -16,7 +21,7 @@ export default function task_2() {
 
   const label = document.createElement("label");
   label.classList.add("task-field__label");
-  const word = Object.keys(vocabulary)[Math.floor(Math.random()*Object.keys(vocabulary).length)];
+  const word = _.sample(_.keys(vocabulary));
   label.textContent = word;
   form.appendChild(label);
 

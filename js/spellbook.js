@@ -3,28 +3,31 @@ import Sprite from "./sprite.js";
 import Sound from "./sound.js";
 import tasks from "./tasks/tasks.js";
 
+const _ = require("lodash");
+
+
 
 function selectSpell(evt) {
   if (evt.offsetX >= 460 && evt.offsetX <= 541 && evt.offsetY >= 284 && evt.offsetY <= 365) {
-    spellbook.currentSpell = new Sprite("img/spell-1.png", [0, 0], [256, 256], 16, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], "horizontal", true);
+    spellbook.currentSpell = new Sprite("img/spell-1.png", [0, 0], [256, 256], 16, _.range(19), "horizontal", true);
     spellbook.spellPosition = [110, 330];
     spellbook.currentSpellAudio = new Sound("audio/spell-1.mp3", "no-loop", 0.4);
     spellbook.show = false;
-    tasks[Object.keys(tasks)[Math.floor(Math.random()*Object.keys(tasks).length)]]();
+    tasks[_.sample(_.keys(tasks))]();
   }
   if (evt.offsetX >= 560 && evt.offsetX <= 641 && evt.offsetY >= 284 && evt.offsetY <= 365) {
-    spellbook.currentSpell = new Sprite("img/spell-2.png", [0, 0], [380, 380], 16, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], "horizontal", true);
+    spellbook.currentSpell = new Sprite("img/spell-2.png", [0, 0], [380, 380], 16, _.range(19), "horizontal", true);
     spellbook.spellPosition = [80, 170];
     spellbook.currentSpellAudio = new Sound("audio/spell-2.mp3", "no-loop", 0.4);
     spellbook.show = false;
-    tasks[Object.keys(tasks)[Math.floor(Math.random()*Object.keys(tasks).length)]]();
+    tasks[_.sample(_.keys(tasks))]();
   }
   if (evt.offsetX >= 660 && evt.offsetX <= 741 && evt.offsetY >= 284 && evt.offsetY <= 365) {
-    spellbook.currentSpell = new Sprite("img/spell-3.png", [0, 0], [380, 380], 12, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], "horizontal", true);
+    spellbook.currentSpell = new Sprite("img/spell-3.png", [0, 0], [380, 380], 12, _.range(17), "horizontal", true);
     spellbook.spellPosition = [70, 190];
     spellbook.currentSpellAudio = new Sound("audio/spell-3.mp3", "no-loop", 0.4);
     spellbook.show = false;
-    tasks[Object.keys(tasks)[Math.floor(Math.random()*Object.keys(tasks).length)]]();
+    tasks[_.sample(_.keys(tasks))]();
   }
   this.onclick = null;
 }

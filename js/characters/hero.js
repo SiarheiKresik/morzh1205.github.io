@@ -2,6 +2,8 @@
 import Sprite from "../sprite.js";
 
 
+
+
 const player = {
   name: "",
   hp: 100,
@@ -25,6 +27,17 @@ const player = {
   },
   updateHero(dt) {
     this.sprite.update(dt);
+  },
+  showDamageValue: {
+    y: 500,
+    isDamaged: false,
+    damage: 0,
+    show(ctx) {
+      ctx.fillStyle = "#c90000";
+      ctx.font = "40px creeper";
+      ctx.fillText(`-${this.damage}`, 850, this.y);
+      this.y-=2;
+    }
   }
 }
 

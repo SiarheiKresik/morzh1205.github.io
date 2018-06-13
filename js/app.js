@@ -6,6 +6,8 @@ import player from "./characters/hero.js";
 import spellbook from "./spellbook.js";
 
 
+
+
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext("2d");
 canvas.width = 1200;
@@ -51,7 +53,7 @@ function init() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     renderMenu();
     fillNameFromLocalStorage();
-
+    document.querySelector(".preloader").remove();
 
     document.querySelector("form").addEventListener("submit", function(evt) {
       evt.preventDefault();
@@ -105,7 +107,12 @@ resources.load([
     "img/spell-icons.png",
     "img/spell-1.png",
     "img/spell-2.png",
-    "img/spell-3.png"
+    "img/spell-3.png",
+    "img/character-1.png",
+    "img/character-2.png",
+    "img/play-circle.svg",
+    "img/times-circle.svg",
+    "img/check-circle.svg"
 ]);
 resources.onReady(init);
 
@@ -131,6 +138,12 @@ function render(ctx) {
   }
   if (spellbook.showSpell) {
     spellbook.renderSpell(ctx);
+    if (enemy.showDamageValue.isDamaged) {
+      enemy.showDamageValue.show(ctx);
+    }
+    if (player.showDamageValue.isDamaged) {
+      player.showDamageValue.show(ctx);
+    }
   }
 }
 

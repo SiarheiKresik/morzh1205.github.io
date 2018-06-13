@@ -1,39 +1,29 @@
 import checkResult from "./checkTasks.js";
 import vocabulary from "./vocabulary.js";
 
-const speechSynthesis = require('speech-synthesis');
+const Sortable = require('sortablejs');
 
 const _ = require("lodash");
 
 
 
 
-export default function task_3() {
+export default function task_5() {
 
   const taskField = document.createElement("section");
   taskField.classList.add("task-field");
 
   const task = document.createElement("p");
   task.classList.add("task-field__task");
-  task.textContent = "Listen and write word in the field:";
+  task.textContent = "Connect the English word with the translation into Russian";
   taskField.appendChild(task);
 
   const form = document.createElement("form");
 
-  const playButton = document.createElement("button");
-  playButton.type = "button";
-  playButton.classList.add("task-field__play-button");
-  const word = _.sample(_.keys(vocabulary));
-  const sayWord = speechSynthesis.bind(null, word, "Google UK English Male");
-  playButton.addEventListener("click", sayWord);
-  form.appendChild(playButton);
+  
 
 
-  const input = document.createElement("input");
-  input.classList.add("task-field__input");
-  input.type = "text";
-  input.required = true;
-  form.appendChild(input);
+  form.appendChild(sortableWord);
 
 
   const button = document.createElement("button");
@@ -44,13 +34,23 @@ export default function task_3() {
   taskField.appendChild(form);
 
   document.querySelector(".game-field").appendChild(taskField);
-  input.focus();
+
+
+  function getResultWord() {
+    let result = "";
+    let letters = document.querySelectorAll(".task-field__sortable-word li");
+    letters.forEach( i => { result += i.textContent; });
+    return result;
+  }
 
 
   form.addEventListener("submit", function(evt) {
     evt.preventDefault();
     let result = false;
-    if (input.value.toLowerCase() == word) {
+
+    let resultWord = getResultWord();
+
+    if (resultWord == word) {
       result = true;
     }
     checkResult(result);
