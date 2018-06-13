@@ -53,7 +53,7 @@ function init() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     renderMenu();
     fillNameFromLocalStorage();
-    
+
     if (document.querySelector(".preloader")) {
       document.querySelector(".preloader").remove();
     }
