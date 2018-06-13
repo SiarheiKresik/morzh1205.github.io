@@ -117,7 +117,7 @@ resources.load([
     "img/times-circle.svg",
     "img/check-circle.svg"
 ]);
-
+resources.onReady(init);
 
 
 function update(dt) {
@@ -275,8 +275,8 @@ function showResult() {
 }
 
 
-document.onreadystatechange = function () {
-    if (document.readyState === "complete") {
-      init();
-    }
-}
+// document.onreadystatechange = function () {
+//     if (document.readyState === "complete") {
+//       init();
+//     }
+// }
