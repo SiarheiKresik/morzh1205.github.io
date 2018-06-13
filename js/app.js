@@ -114,7 +114,7 @@ resources.load([
     "img/times-circle.svg",
     "img/check-circle.svg"
 ]);
-resources.onReady(init);
+
 
 
 function update(dt) {
@@ -269,4 +269,12 @@ function showResult() {
   results.appendChild(button);
 
   document.querySelector(".game-field").appendChild(results);
+}
+
+
+
+document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+        init();
+    }
 }
