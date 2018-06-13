@@ -23,7 +23,11 @@ export default function task_4() {
   const sortableWord = document.createElement("ul");
   sortableWord.classList.add("task-field__sortable-word");
   const word = _.sample(_.keys(vocabulary));
-  const splittedWord = _.shuffle(word.split(""));
+  let splittedWord = word.split("");
+  while (splittedWord.join("") == word) {
+    splittedWord = _.shuffle(splittedWord);
+  }
+
 
   splittedWord.forEach( i => {
     const li = document.createElement("li");

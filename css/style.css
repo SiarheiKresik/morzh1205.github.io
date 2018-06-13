@@ -217,8 +217,37 @@ body {
 }
 
 
+/*  TASK 5  */
 
-
+.task-field__wrapper {
+	display: flex;
+	margin-bottom: 20px;
+}
+.task-field__given-words-list,
+.task-field__sortable-words-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.task-field__given-words-list li,
+.task-field__sortable-words-list li {
+	margin-bottom: 10px;
+	padding: 0 5px;
+}
+.task-field__given-words-list {
+	margin-right: 60px;
+	position: relative;
+}
+.task-field__given-words-list li::after {
+	content: "-";
+	position: absolute;
+	right: -30px;
+}
+.task-field__sortable-words-list li {
+	background: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
 
 
 
