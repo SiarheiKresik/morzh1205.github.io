@@ -63,9 +63,7 @@ export default function task_4() {
     evt.preventDefault();
     let result = false;
 
-    let resultWord = getResultWord();
-
-    if (resultWord == word) {
+    if (getResultWord() == word) {
       result = true;
     }
     checkResult(result);
