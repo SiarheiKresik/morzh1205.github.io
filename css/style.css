@@ -277,6 +277,27 @@ body {
 }
 
 
+/*  TASK 7   */
+
+.task-field__equation {
+	margin-top: 20px;
+	margin-bottom: 35px;
+}
+
+
+.task-field__numeric-input {
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 25px;
+	text-align: center;
+}
+
+
+
 
 /*    RECORDS TABLE     */
 
