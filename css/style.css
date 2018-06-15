@@ -1,444 +1,177 @@
-@font-face {
-    font-family: 'SF-Atarian-System-Italic';
-    src: url('../fonts/SF Atarian System Italic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'creeper';
-    src: url('../fonts/creeper.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-  background-image: url(../img/pattern.png);
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	background-image: url(../img/pattern.png);
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
 
 
-.game-field {
+.container {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+
+.main-header {
 	position: relative;
 }
-
-/*   MENU   */
-
-.menu {
+.main-header__wrapper {
 	position: absolute;
+	padding: 0 50px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 1200px;
-	height: 650px;
-	background: rgba(0, 0, 0, 0.65);
-	top: 0;
+	justify-content: space-between;
 	left: 0;
-	font-family: "SF-Atarian-System-Italic";
-	font-size: 50px;
-	color: white;
+	right: 0;
 }
-.menu__label {
-	margin-bottom: 30px;
+
+.main-header h1 {
+	font-family: "creeper";
+	font-size: 25px;
+	color: red;
 }
-.menu__input {
-	box-sizing: border-box;
-	padding: 5px 10px;
-	height: 50px;
-	width: 250px;
-	border: none;
-	font: inherit;
-	font-size: 40px;
-	background-color: rgba(126, 133, 132, 0.88);
-	color: white;
+
+.main-header__navigation-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
 }
-.button {
-  display: block;
-	width: 250px;
-	font: inherit;
-	border: none;
+.main-header__navigation-list li a {
+	display: block;
+	padding: 30px 20px 20px 20px;
 	cursor: pointer;
+}
+.main-header__navigation-list li a:hover {
+	background-color: rgba(135, 130, 132, 0.49);
+}
+
+
+.button {
+	display: block;
+	border: none;
+	border-radius: 20px;
+	font-size: 30px;
+	padding: 15px;
 	background-color: rgba(124, 31, 22, 0.81);
+	cursor: pointer;
 	color: white;
 }
 .button:hover {
 	background-color: rgb(180, 17, 17);
 	color: black;
 }
-.menu__characters-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+
+
+.promo {
+	height: 720px;
 	display: flex;
-	margin-bottom: 50px;
-	width: 250px;
-	justify-content: space-between;
+	background-image: url(../img/promo-background.jpg);
 }
-.menu__characters-list li {
-	width: 110px;
-	height: 100px;
-	cursor: pointer;
-}
-.menu__characters-list li:nth-child(1) {
-	background-image: url("../img/character-1.png");
-}
-.menu__characters-list li:nth-child(2) {
-	background-image: url("../img/character-2.png");
-}
-.menu__characters-list li:hover {
-	background-color: rgba(0, 0, 0, 0.65);
-}
-.menu__characters-list .active {
-	background-color: rgba(0, 0, 0, 0.65);
-}
-.menu form {
+.promo__wrapper {
+	margin: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
-
-
-/*    TASKS   1-3  */
-
-
-@keyframes bounce {
-  0%    { transform: translateY(-2000px);}
-  70%   { transform: translateY(30px);}
-  90%   { transform: translateY(-10px);}
-  100%  { transform: translateY(0);}
-}
-@keyframes bounce-2 {
-  0%              { transform: translateY(-1000px);}
-  5%, 15%, 25%   { transform: translateY(10px);}
-  10%, 20%, 30%   { transform: translateY(-10px);}
-  100%            { transform: translateY(calc(50vh - 60px));}
+.promo__text {
+	font-family: "creeper";
+	color: red;
+	font-size: 50px;
 }
 
 
-.task-field {
-  position: absolute;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-  width: 720px;
-	height: 370px;
-  padding: 0 20px;
-  top: 50%;
-	margin-top: -185px;
-  left: 50%;
-	margin-left: -360px;
-  border-radius: 10px;
-  background-color: rgba(233, 233, 233, 0.95);
-	background-image: linear-gradient(133deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
-	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.14), 10px 10px 15px rgba(0, 0, 0, 0.54);
-	font-size: 25px;
-  animation-name: bounce;
-  animation-duration: 0.6s;
-}
-.task-field__task {
-	margin: 0;
-	margin-top: 30px;
-	margin-bottom: 20px;
-  font-size: 30px;
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
-}
-.task-field__label {
-	display: block;
-	text-align: center;
-	margin-bottom: 20px;
-}
-.task-field form {
-  display: flex;
-  flex-direction: column;
-}
-.task-field__input {
-	box-sizing: border-box;
-	padding: 7px 10px;
-	border: none;
-	font-size: 20px;
-	border-radius: 5px;
-	margin-bottom: 40px;
-}
-.task-field__button {
-	padding: 10px;
-	font-size: 20px;
-	border: none;
-	color: white;
-	border-radius: 5px;
-	background-color: #1abc9c;
-	cursor: pointer;
-}
-.task-field__button:hover {
-	background-color: #1bc6a4;
-}
-.task-field__button:active {
-  background-color: #1abc9c;
-}
 
-.task-field__notice {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  left: 50%;
-  margin-left: -60px;
-  top: 50%;
-  margin-top: -60px;
-  background-image: url(../img/check-circle.svg);
-  animation-name: bounce-2;
-  animation-duration: 2s;
-}
-.task-field__notice.wrong {
-  background-image: url(../img/times-circle.svg);
-}
 
-/*  SORT TASK   TASK 4   */
-
-.task-field__sortable-word {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-  margin: 30px 0;
-	display: flex;
-}
-.task-field__sortable-word li {
-	width: 50px;
-	height: 60px;
-	margin-right: 10px;
+.screenshots h2 {
 	text-align: center;
 	font-size: 36px;
-	line-height: 50px;
-	border-radius: 7px;
-	background: white;
+	font-weight: normal;
+}
+
+.screenshots__list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.screenshots__list li {
+	margin-right: 90px;
+	margin-bottom: 50px;
 	cursor: pointer;
 }
-
-
-/*  TASK 5  */
-
-.task-field__wrapper {
-	display: flex;
-	margin-bottom: 10px;
+.screenshots__list li:nth-child(4n) {
+	margin-right: 0;
 }
-.task-field__given-words-list,
-.task-field__sortable-words-list {
+
+
+.screenshots img {
+	width: 250px;
+	height: 135px;
+	transition-duration: 0.5s;
+}
+.screenshots img:hover {
+	transform:scale(3);
+}
+
+
+
+
+.play {
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.play__text {
+	margin: 0;
+	margin-bottom: 60px;
+	text-align: center;
+	font-size: 36px;
+}
+
+.play__button {
+	margin: 0 auto;
+	font-size: 50px;
+	padding: 10px 50px;
+}
+
+
+
+
+.main-footer {
+	background-color: rgb(28, 29, 32);
+}
+
+.author {
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+.author__social-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-}
-.task-field__given-words-list li,
-.task-field__sortable-words-list li {
-	margin-bottom: 10px;
-	padding: 0 5px;
-}
-.task-field__given-words-list {
-	margin-right: 60px;
-	position: relative;
-}
-.task-field__given-words-list li::after {
-	content: "-";
-	position: absolute;
-	right: -30px;
-}
-.task-field__sortable-words-list li {
-	background: white;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-
-
-/*   TASK 6   */
-
-.task-field__sortable-sentence {
-	margin: 0;
-	padding: 0;
-	list-style: none;
 	display: flex;
-  flex-wrap: wrap;
-	margin-top: 20px;
-	margin-bottom: 30px;
+	align-items: center;
+	margin-left: 20px;
 }
-.task-field__sortable-sentence li {
+.author__social-list li a {
+	display: block;
+	height: 30px;
+	width: 30px;
 	margin-right: 10px;
-  margin-bottom: 10px;
-	padding: 5px 10px;
-	background: white;
-	border-radius: 5px;
-	cursor: pointer;
 }
-
-
-/*  TASK 7   */
-
-.task-field__equation {
-	margin-top: 20px;
-	margin-bottom: 35px;
-}
-
-
-.task-field__numeric-input {
-	box-sizing: border-box;
-	width: 40px;
-	height: 40px;
-	margin-right: 10px;
-	border: none;
-	border-radius: 5px;
-	font-size: 25px;
-	text-align: center;
-}
-
-
-
-
-/*    RECORDS TABLE     */
-
-.results {
-	position: absolute;
-	width: 1200px;
-	height: 650px;
-	background: rgba(0, 0, 0, 0.65);
-	top: 0;
-	left: 0;
-	font-family: "SF-Atarian-System-Italic";
-	font-size: 28px;
-	color: white;
-}
-.results__heading {
-  margin: 0;
-	margin-top: 30px;
-	font-size: 45px;
-	text-align: center;
-	line-height: 65px;
-}
-.records__recordsList {
-  margin: 0;
-  margin-top: 20px;
-  margin-bottom: 15px;
-	text-align: center;
-	list-style-position: inside;
-}
-.records__recordsList li {
-  line-height: 35px;
-}
-.results__button {
-  margin: 0 auto;
-  padding: 5px 0;
-  font-size: 35px;
-}
-
-
-.task-field__play-button {
-  display: block;
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  border: none;
-  background: transparent url("../img/play-circle.svg") no-repeat center;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-  /* PRELOADER  */
-
-
-.preloader {
-  position: absolute;
-  display: flex;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 100;
-
-}
-.preloader p {
-  margin: auto;
-  padding: 0;
-  font-weight: 100;
-  font-size: 30px;
-  color: #a3e1f0;
-}
-
-.preloader span {
-  position: relative;
-  top: 0.63em;
-  display: inline-block;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: rotateX(-90deg);
-}
-
-.preloader .let1 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.2s;
-}
-
-.preloader .let2 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.3s;
-}
-
-.preloader .let3 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.4s;
-}
-
-.preloader .let4 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.5s;
-
-}
-
-.preloader .let5 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.6s;
-}
-
-.preloader .let6 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.7s;
-}
-
-.preloader .let7 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.8s;
-}
-
-@keyframes drop {
-    10% {
-        opacity: 0.5;
-    }
-    20% {
-        opacity: 1;
-        top: 3.78em;
-        transform: rotateX(-360deg);
-    }
-    80% {
-        opacity: 1;
-        top: 3.78em;
-        transform: rotateX(-360deg);
-    }
-    90% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 0;
-        top: 6.94em
-    }
+.author__social-github {
+	background: url(../img/github.svg) no-repeat center;
 }

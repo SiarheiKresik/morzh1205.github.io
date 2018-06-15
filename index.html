@@ -2,24 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Game</title>
+    <title>Monster Arena</title>
+    <link href="fonts/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="preloader">
-      <p>
-        <span class="let1">l</span>
-        <span class="let2">o</span>
-        <span class="let3">a</span>
-        <span class="let4">d</span>
-        <span class="let5">i</span>
-        <span class="let6">n</span>
-        <span class="let7">g</span>
-      </p>
-    </div>
-    <div class="game-field">
-      <canvas id="game"></canvas>
-    </div>
-    <script src="dist/main.js"></script>
+    <header class="main-header container">
+			<div class="main-header__wrapper">
+				<h1>Monster Arena</h1>
+				<nav class="main-header__navigation">
+					<ul class="main-header__navigation-list">
+						<li><a href="#about">About</a></li>
+						<li><a href="#screenshots">Screenshots</a></li>
+						<li><a href="#play">Play</a></li>
+						<li><a href="#author">Developer</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<section class="promo container">
+			<div class="promo__wrapper">
+				<p class="promo__text">
+					Monster Arena
+				</p>
+				<a class="promo__button button" href="#play">PLAY NOW</a>
+			</div>
+		</section>
+		<section class="screenshots container" id="screenshots">
+			<h2>Screenshots</h2>
+			<ul class="screenshots__list">
+				<li><img src="img/screenshots/Screenshot_1.jpg" alt="srcreenshot-1"></li>
+				<li><img src="img/screenshots/Screenshot_2.jpg" alt="srcreenshot-2"></li>
+				<li><img src="img/screenshots/Screenshot_3.jpg" alt="srcreenshot-3"></li>
+				<li><img src="img/screenshots/Screenshot_4.jpg" alt="srcreenshot-4"></li>
+				<li><img src="img/screenshots/Screenshot_5.jpg" alt="srcreenshot-5"></li>
+				<li><img src="img/screenshots/Screenshot_6.jpg" alt="srcreenshot-6"></li>
+				<li><img src="img/screenshots/Screenshot_7.jpg" alt="srcreenshot-7"></li>
+				<li><img src="img/screenshots/Screenshot_8.jpg" alt="srcreenshot-8"></li>
+			</ul>
+		</section>
+		<section class="play container" id="play">
+			<p class="play__text">Click the link below to start game</p>
+			<a class="play__button button" href="game/index.html">PLAY</a>
+		</section>
+		<footer class="main-footer">
+			<section class="author container" id="author">
+				<p>
+					Developer: Eugene Litvinchuk, 2018
+				</p>
+				<ul class="author__social-list">
+					<li><a href="https://github.com/morzh1205" class="author__social-github" target="_blank"></a></li>
+				</ul>
+			</section>
+		</footer>
   </body>
 </html>
