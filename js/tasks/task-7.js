@@ -33,6 +33,8 @@ export default function task_7() {
   const input = document.createElement("input");
   input.classList.add("task-field__numeric-input");
   input.required = true;
+  input.maxLength = 2;
+  input.pattern = "^[0-9]+$";
   wrapper.appendChild(input);
 
   const rightPartItem = document.createElement("span");
