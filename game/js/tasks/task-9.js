@@ -5,27 +5,27 @@ const _ = require("lodash");
 
 
 const words = {
-  "beach": ["apartment", "flat", "house"],
-  "briefcase": ["desk", "chair", "table"],
-  "diary": ["computer", "screen", "mouse"],
-  "sneeze": ["sprint", "walk", "run"],
-  "type": ["consider", "think", "reflect"],
-  "hose": ["ears", "mouth", "eyes"],
-  "pit": ["goat", "rabbit", "cow"],
-  "humans": ["production", "marketing", "sales"],
-  "frog": ["run", "swim", "jump"],
-  "red": ["dog", "cat", "tiger"],
-  "Lion ": ["sing", "dance", "fly"],
-  "Spring": ["Tuesday", "Saturday", "Thursday"],
-  "picnic": ["ocean", "sea", "river"],
-  "house": ["country", "town", "city"],
-  "tired": ["lucky", "happy", "nice"],
-  "read": ["talk", "tell", "speak"],
-  "Thursday": ["science", "English", "math"],
-  "school": ["present", "party", "invitation"],
-  "trip": ["cheek", "eye", "nose"],
-  "group": ["sister", "partner", "student"],
-  "pen": ["ask", "do", "get"]
+  "beach": ["apartment", "flat", "house", "beach"],
+  "briefcase": ["desk", "chair", "table", "briefcase"],
+  "diary": ["computer", "screen", "mouse", "diary"],
+  "sneeze": ["sprint", "walk", "run", "sneeze"],
+  "type": ["consider", "think", "reflect", "type"],
+  "hose": ["ears", "mouth", "eyes", "hose"],
+  "pit": ["goat", "rabbit", "cow", "pit"],
+  "humans": ["production", "marketing", "sales", "humans"],
+  "frog": ["run", "swim", "jump", "frog"],
+  "red": ["dog", "cat", "tiger", "red"],
+  "Lion": ["sing", "dance", "fly", "Lion"],
+  "Spring": ["Tuesday", "Saturday", "Thursday", "Spring"],
+  "picnic": ["ocean", "sea", "river", "picnic"],
+  "house": ["country", "town", "city", "house"],
+  "tired": ["lucky", "happy", "nice", "tired"],
+  "read": ["talk", "tell", "speak", "read"],
+  "Thursday": ["science", "English", "math", "Thursday"],
+  "school": ["present", "party", "invitation", "school"],
+  "trip": ["cheek", "eye", "nose", "trip"],
+  "group": ["sister", "partner", "student", "group"],
+  "pen": ["ask", "do", "get", "pen"]
 }
 
 
@@ -44,13 +44,12 @@ export default function task_9() {
 
   const differentWord = _.sample(_.keys(words));
   let wordsArray = words[differentWord];
-  wordsArray.push(differentWord);
-  _.shuffle(wordsArray);
+  let shuffeledWordsArray = _.shuffle(wordsArray);
 
 
   const wordsList = document.createElement("ul");
   wordsList.classList.add("task-field__wordsList");
-  wordsArray.forEach( i => {
+  shuffeledWordsArray.forEach( i => {
     const li = document.createElement("li");
     li.textContent = i;
     wordsList.appendChild(li);
@@ -59,13 +58,14 @@ export default function task_9() {
 
   document.querySelector(".game-field").appendChild(taskField);
 
-  wordsList.addEventListener("click", function(evt) {
+  wordsList.addEventListener("click", function handler(evt) {
     if (evt.target != this) {
       let result = false;
       if (evt.target.textContent == differentWord) {
         result = true;
       }
       checkResult(result);
+      wordsList.removeEventListener("click", handler);
     }
   });
 }
