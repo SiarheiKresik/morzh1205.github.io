@@ -6,6 +6,7 @@ import task_5 from "./task-5.js";
 import task_6 from "./task-6.js";
 import task_7 from "./task-7.js";
 import task_8 from "./task-8.js";
+import task_9 from "./task-9.js";
 
 
 const tasks = {
@@ -16,7 +17,8 @@ const tasks = {
   task_5: task_5,
   task_6: task_6,
   task_7: task_7,
-  task_8: task_8
+  task_8: task_8,
+  task_9: task_9
 }
 
 

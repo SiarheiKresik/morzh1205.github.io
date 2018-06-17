@@ -277,12 +277,30 @@ body {
 }
 
 
-/*  TASK 7   */
+/*  TASK 7 - 8  */
 
 .task-field__equation {
 	margin-top: 20px;
 	margin-bottom: 35px;
 }
+
+/*  TASK 9  */
+
+.task-field__wordsList {
+	margin: 0;
+	margin-top: 50px;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+.task-field__wordsList li {
+	margin-right: 20px;
+	padding: 5px 10px;
+	background: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
 
 
 .task-field__numeric-input {
